@@ -1,0 +1,12 @@
+{
+  "app": {
+    "debug": false,
+    "listen": false,
+    "feedback_limit": 3
+  },
+  "api": {
+    "host": "api.rt.speechmatics.io:9000",
+    "user_id": 1,
+    "auth_token": "rt_test"
+  }
+}

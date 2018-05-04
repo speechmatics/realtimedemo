@@ -1,0 +1,80 @@
+{
+  "dialog": {
+    "heavyload": {
+      "title": "Sorry!",
+      "ariaLabel": "Sorry!",
+      "textContent":
+        "<p>Too many people are trialing the demo at this time.</p><p>Please try again in a few minutes as each demo session is limited 2 minutes.</p><p>Thank you for your patience.</p>",
+      "actions": {
+        "ok": "OK"
+      }
+    },
+    "timelimit": {
+      "title": "Trial session complete",
+      "ariaLabel": "Trial session complete",
+      "textContent":
+        "The free real-time demo is restricted to {{limit}} per session.",
+      "actions": {
+        "ok": "Tell us what you think",
+        "cancel": "Have another go"
+      }
+    },
+    "feedback": {
+      "title": "Feedback",
+      "ariaLabel": "Demo Feedback",
+      "actions": {
+        "submit": "Submit"
+      }
+    },
+    "accuracy": {
+      "aria": {
+        "label": "How to improve accuracy"
+      },
+      "analytics": {
+        "label": "How to improve accuracy"
+      },
+      "title": "How to improve accuracy",
+      "htmlContent":
+        "<p>Real-time speech recognition is limited by the quality of the audio presented to the system.</p><p>To get the best out of our system – follow the simple steps below.</p><h4>You:</h4><ul><li>Speak clearly however, there is no need to speak slowly</li><li>Ideally, your voice should flow over the microphone, not directly into it for optimal results</li><li>Literal translation of people ‘thinking out loud’ is very hard to read, so – if possible – think about what you want to say before you say it</li><li>If you have time, record some test audio and play it back to check it all sounds okay before you try it live</li></ul><h4>Your environment:</h4><ul><li>Record in a quiet environment to minimise background noise</li><li>Try to avoid multiple people speaking at the same time</li><li>Minimise reverberation. Sound can sometimes bounce off flat walls and muddy the signal</li></ul><h4>Your technology:</h4><ul><li>Use a good microphone, such as a USB noise cancelling (or directional) microphone – a head mounted microphone is preferable</li><li>Record at 16kHz or greater if possible</li><li>There is no need to compress the audio, if you do, please don’t over compress – use 96 kbps AAC or 128 kbps MP3 or better.</li><li>Use two channels if available.</li></ul>"
+    }
+  },
+  "components": {
+    "app": {
+      "title": "Real-time transcription demo",
+      "improveAccuracy": "Improve Accuracy",
+      "leaveFeedback": "Leave Feedback",
+      "errors": {
+        "catchAll": {
+          "title": "Something went wrong, please try refreshing.",
+          "body": "🙁"
+        }
+      },
+      "aria": {
+        "speechmatics": "Speechmatics"
+      },
+      "analytics": {
+        "feedback": "Leave Feedback Button Clicked",
+        "accuracy": "Improve Accuracy Button Clicked"
+      },
+      "languageSelectLabel": "Select the language you will be transcribing"
+    },
+    "feedbackForm": {
+      "rating": {
+        "label": "How would you rate today's demo?",
+        "leftLabel": "Poor",
+        "rightLabel": "Excellent",
+        "range": [1, 2, 3, 4, 5, 6, 7]
+      },
+      "explanation": {
+        "label": "Tell us why you chose that rating."
+      },
+      "contactDetails": {
+        "firstname": "First name",
+        "lastname": "Last name",
+        "email": "Email",
+        "caption":
+          "<p>If you would like to provide us with your name and email address – we can keep you up-to-date with new developments. If you would like to get in touch regarding Speechmatics services, contact us at: <a href=\"mailto:info@speechmatics.com\">info@speechmatics.com</a></p>"
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<md-dialog class="feedback-dialog"
+  ng-attr-aria-label="$ctrl.content.ariaLabel">
+  <form ng-cloak
+    ng-submit="$ctrl.submit()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 ng-bind="$ctrl.content.title"></h2>
+        <span flex></span>
+        <md-button class="md-icon-button"
+          ng-click="cancel()">
+          <md-icon md-svg-src="${require('file-loader!./../../../../assets/icons/ic_close_48px.svg')}"
+            aria-label="Close dialog"
+            ng-click="$ctrl.close()"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <feedback-form-component ng-if="!$ctrl.submitted"
+        ng-model="$ctrl.formModel"
+        ng-disabled="$ctrl.submitting"></feedback-form-component>
+      <div ng-if="$ctrl.submitted"
+        class="thankyou-msg"
+        layout="row"
+        layout-align="center "
+        layout-fill>
+        <h3 class="md-title text-center">Thank you for your feedback.
+          <br>🎉</h3>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Submit"
+        type="submit"
+        ng-if="!$ctrl.submitted"
+        ng-disabled="$ctrl.submitting"
+        md-autofocus>
+        <div layout="row"
+          layout-align="center center">
+          <span ng-if="!$ctrl.submitting">Submit</span>
+          <md-progress-circular ng-if="$ctrl.submitting"
+            md-mode="indeterminate"
+            md-diameter="20px"></md-progress-circular>
+        </div>
+      </md-button>
+      <md-button aria-label="Close"
+        ng-click="$ctrl.close()"
+        ng-if="$ctrl.submitted"
+        md-autofocus>
+        Close
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

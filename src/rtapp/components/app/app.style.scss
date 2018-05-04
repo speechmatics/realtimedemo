@@ -1,0 +1,40 @@
+.app-component {
+  .app-main {
+    min-height: 100%;
+  }
+
+  .app-content {
+    width: 960px;
+  }
+
+  .app-controls {
+    padding: 2rem 1rem;
+  }
+
+  .app-title {
+    white-space: nowrap;
+  }
+
+  .error-emoji {
+    margin: 0;
+    font-size: 5rem;
+  }
+
+  .speechmatics-logo {
+    height: inherit;
+    padding: 0.5em 0;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+
+  footer {
+    .md-button {
+      height: 20px;
+      line-height: 20px;
+      min-height: 20px;
+      min-width: 0;
+    }
+  }
+}

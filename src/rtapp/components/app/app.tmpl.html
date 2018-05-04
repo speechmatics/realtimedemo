@@ -1,0 +1,109 @@
+<div class="app-component"
+  layout="column">
+  <header>
+    <md-toolbar md-scroll-shrink>
+      <div class="md-toolbar-tools"
+        layout="row">
+        <md-icon flex
+          md-svg-src="{{$ctrl.speechmaticsLogoSrc}}"
+          class="s48 speechmatics-logo"
+          aria-label="{{$ctrl.strings.components.app.aria.speechmatics}}"></md-icon>
+        <h3 flex
+          class="text-center app-title"
+          ng-bind="$ctrl.strings.components.app.title"></h3>
+        <div flex></div>
+      </div>
+    </md-toolbar>
+  </header>
+  <main class="app-main"
+    layout="column"
+    layout-align="center center">
+    <md-content class="app-content"
+      layout="column"
+      md-whiteframe="1">
+      <div layout="row"
+        layout-align="space-between"
+        layout-fill>
+        <md-button class="md-raised md-primary"
+          ng-click="$ctrl.onAccuracyClicked($event)"
+          analytics-on="click"
+          analytics-event="{{$ctrl.strings.components.app.analytics.accuracy}}">
+          {{$ctrl.strings.components.app.improveAccuracy}}
+        </md-button>
+        <md-button class="md-raised md-accent"
+          ng-click="$ctrl.onFeedbackClicked($event)"
+          analytics-on="click"
+          analytics-event="{{$ctrl.strings.components.app.analytics.feedback}}">
+          {{$ctrl.strings.components.app.leaveFeedback}}
+        </md-button>
+      </div>
+      <div ng-if="$ctrl.error"
+        class="error-msg"
+        layout="column"
+        layout-align="center center">
+        <h4 class="md-display-1"
+          ng-bind="$ctrl.strings.components.app.errors.catchAll.title"></h4>
+        <span class="md-display-4"
+          ng-bind="$ctrl.strings.components.app.errors.catchAll.body"></span>
+      </div>
+      <div class="app-controls"
+        ng-if="!$ctrl.error"
+        layout="column"
+        layout-align="center center"
+        layout-fill>
+        <p ng-bind="$ctrl.strings.components.app.languageSelectLabel"></p>
+        <language-selector-component disabled="$ctrl.state !== $ctrl.AppState.DISCONNECTED"
+          languages="$ctrl.options.languages"
+          selected="$ctrl.params.language">
+        </language-selector-component>
+        <div ng-if="$ctrl.config.app.debug">
+          <p ng-bind="$ctrl.state"></p>
+        </div>
+        <microphone-button-component disabled="!$ctrl.params.language || $ctrl.state === $ctrl.AppState.CONNECTING || $ctrl.state === $ctrl.AppState.CONNECTED  || $ctrl.state === $ctrl.AppState.GETTING_USER_MEDIA"
+      
+          recording="$ctrl.state === $ctrl.AppState.CAPTURING_AUDIO"
+          on-activated="$ctrl.onMicrophoneButtonActivated()">
+        </microphone-button-component>
+      </div>
+      <div class="transcripts"
+        layout-fill>
+        <transcript-component layout-fill
+          state="$ctrl.state"
+          class="transcript"
+          ng-repeat="transcript in $ctrl.transcripts track by $index"
+          index="$index"
+          model="transcript"></transcript-component>
+      </div>
+    </md-content>
+  </main>
+  <footer layout="column">
+    <md-divider></md-divider>
+    <div layout="row"
+      layout-align="center"
+      layout-padding>
+      <div class="app-content"
+        layout="row"
+        layout-align="center center"
+        layout-wrap>
+        <div flex="none">
+          <md-button target="_blank"
+            ng-href="https://www.speechmatics.com/terms-and-conditions">Terms &amp; Conditions</md-button>
+          <span> | </span>
+          <md-button target="_blank"
+            ng-href="https://www.speechmatics.com/terms-of-service">Terms of Service</md-button>
+          <span> | </span>
+          <md-button target="_blank"
+            ng-href="https://www.speechmatics.com/privacy-statement">Privacy</md-button>
+          <span> | </span>
+          <md-button target="_blank"
+            ng-href="https://www.speechmatics.com/contact-us/">Contact</md-button>
+        </div>
+        <div flex></div>
+        <div flex="none"
+          layout-align="end">
+          <span>&copy; {{$ctrl.year}} Speechmatics</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

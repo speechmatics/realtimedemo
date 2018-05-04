@@ -1,0 +1,6 @@
+FROM node:7
+WORKDIR /usr/src/realtimewebclient
+COPY package.json .
+COPY yarn.lock .
+RUN yarn install && yarn cache clean
+CMD npm run dev

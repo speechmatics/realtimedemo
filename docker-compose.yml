@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: npm run dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - /usr/src/realtimewebclient/node_modules
+      - .:/usr/src/realtimewebclient

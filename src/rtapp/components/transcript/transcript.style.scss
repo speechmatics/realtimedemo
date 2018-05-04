@@ -1,0 +1,11 @@
+.transcript-component {
+  padding: 0;
+
+  .transcript {
+    padding: 0;
+
+    &.partial {
+      color: grey;
+    }
+  }
+}

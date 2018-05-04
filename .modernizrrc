@@ -1,0 +1,12 @@
+{
+  "minify": true,
+  "options": [
+    "setClasses"
+  ],
+  "feature-detects": [
+    "audio/webaudio",
+    "webrtc/getusermedia",
+    "websockets",
+    "websockets/binary"
+  ]
+}

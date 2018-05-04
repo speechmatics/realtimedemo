@@ -1,0 +1,17 @@
+<md-button class="md-fab"
+    ng-class="{'md-warn': $ctrl.recording}"
+    aria-label="Begin Recording"
+    ng-disabled="$ctrl.disabled"
+    ng-mousedown="$ctrl.onActivated()"
+    analytics-on="mousedown"
+    analytics-event="Microphone Button Clicked">
+    <md-tooltip md-delay="demo.delayTooltip"
+        md-direction="right">
+        <span ng-if="!$ctrl.recording">Start Capture</span>
+        <span ng-if="$ctrl.recording">Stop Capture</span>
+    </md-tooltip>
+    <md-icon ng-if="$ctrl.recording"
+        md-svg-src="${require('file-loader!./../../../assets/icons/ic_mic_48px.svg')}"></md-icon>
+    <md-icon ng-if="!$ctrl.recording"
+        md-svg-src="${require('file-loader!./../../../assets/icons/ic_mic_none_48px.svg')}"></md-icon>
+</md-button>

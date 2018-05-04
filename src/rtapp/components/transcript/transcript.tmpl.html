@@ -1,0 +1,26 @@
+<md-card class="transcript-component">
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-title">Transcript in {{$ctrl.model.language.name}}</span>
+      <span class="md-subhead"
+        ng-bind="$ctrl.model.date"></span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+    <p ng-if="!$ctrl.index && !$ctrl.model.paragraphs.length && $ctrl.state === $ctrl.AppState.CAPTURING_AUDIO"
+      md-colors="::{color: 'grey'}">
+      Start speaking...
+    </p>
+    <p ng-if="$ctrl.model.paragraphs.length">
+      <span class="transcript"
+        ng-repeat="paragraph in $ctrl.model.paragraphs track by $index"
+        ng-class="paragraph.type"
+        ng-bind="paragraph.text"></span>
+    </p>
+  </md-card-content>
+  <md-card-actions layout="row"
+    layout-align="end center">
+    <md-button ng-disabled="$ctrl.state !== $ctrl.AppState.DISCONNECTED"
+      ng-click="$ctrl.handleCloseClicked($event)">Delete</md-button>
+  </md-card-actions>
+</md-card>

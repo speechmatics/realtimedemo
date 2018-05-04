@@ -1,0 +1,7 @@
+files:
+  include: 'src/styles/**/*.s+(a|c)ss'
+rules:
+  indentation:
+    - 2
+    -
+      size: 2

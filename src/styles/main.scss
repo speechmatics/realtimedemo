@@ -1,0 +1,257 @@
+$black: #000;
+$dark-red: #300;
+$gray: #666;
+$green: #008000;
+$light-green: #cfc;
+$red: #ce0000;
+$white: #fff;
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+
+  @media (min-width: 80em) {
+    font-size: 18px;
+  }
+}
+
+#incoming {
+  border: 1px solid $black;
+  display: none;
+  height: 100px;
+  width: 400px;
+}
+
+#outgoing {
+  border: 1px solid $black;
+  display: none;
+  height: 100px;
+  width: 400px;
+}
+
+#transcript {
+  /*width: 1000px;*/
+  background-color: $white;
+  border: 1px solid $black;
+  font-size: 150%;
+  height: 70%;
+  left: 50%;
+  overflow: auto;
+  padding: 5px;
+  position: absolute;
+  top: 120px;
+  transform: translateX(-50%);
+  width: 90%;
+
+  .final {
+    color: $black;
+  }
+
+  .partial {
+    color: $gray;
+  }
+}
+
+#status {
+  border: 1px solid $black;
+  height: 20px;
+  width: 400px;
+}
+
+#buffer_size {
+  border: 1px solid $black;
+  display: none;
+  height: 20px;
+  width: 400px;
+}
+
+#audioDuration {
+  border: 1px solid $black;
+  display: none;
+  height: 20px;
+  left: 420px;
+  position: absolute;
+  top: 20px;
+  width: 100px;
+}
+
+#asr_position {
+  border: 1px solid $black;
+  display: none;
+  height: 20px;
+  left: 420px;
+  position: absolute;
+  top: 40px;
+  width: 100px;
+}
+
+#rtf {
+  border: 1px solid $black;
+  display: none;
+  height: 20px;
+  left: 420px;
+  position: absolute;
+  top: 60px;
+  width: 100px;
+}
+
+#note {
+  bottom: 5px;
+  display: none;
+  position: absolute;
+}
+
+#connection {
+  bottom: 20px;
+  height: 45px;
+  position: absolute;
+  right: 20px;
+  width: 330px;
+
+  .node {
+    border: 1px solid;
+    border-color: $green;
+    color: $green;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 80px;
+
+    &.disconnected {
+      border-color: $gray;
+      color: $gray;
+    }
+
+    &.connected {
+      background-color: $light-green;
+      border-color: $green;
+      color: $green;
+    }
+
+    &.error {
+      background-color: $dark-red !important;
+      border-color: $red !important;
+      color: $red !important;
+    }
+  }
+
+  .connection {
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 40px;
+  }
+}
+
+#node_audio {
+  left: 0;
+}
+
+#node_api {
+  left: 120px;
+}
+
+#node_worker {
+  left: 240px;
+}
+
+#connection_audio_api {
+  left: 80px;
+}
+
+#connection_api_worker {
+  left: 200px;
+}
+
+#error {
+  background-color: lighten($red, 50%);
+  border: $red solid 1px;
+  color: $red;
+  height: 80px;
+  left: 50%;
+  overflow: auto;
+  padding: 5px;
+  position: absolute;
+  top: 20px;
+  transform: translateX(-50%);
+  visibility: hidden;
+  width: 80%;
+}
+
+#connectionStatistics {
+  bottom: 10px;
+  left: 20px;
+  position: absolute;
+}
+
+.csName {
+  float: left;
+  width: 200px;
+}
+
+.csValue {
+  float: left;
+  text-align: right;
+  width: 45px;
+}
+
+#test_files {
+  bottom: 100px;
+  font-size: 80%;
+  left: 20px;
+  line-height: 1.2;
+  position: absolute;
+}
+
+#langbox {
+  left: 100px;
+  width: 100px;
+}
+
+#credentials {
+  left: 200px;
+  width: 250px;
+
+  input {
+    width: 110px;
+  }
+
+  label {
+    display: block;
+    float: left;
+    padding-right: 1em;
+    text-align: right;
+    width: 110px;
+  }
+}
+
+#job_info {
+  width: 100px;
+}
+
+#credentials,
+#job_info,
+#langbox,
+#playback_controls {
+  border-right: 1px solid $gray;
+  float: left;
+  height: 80px;
+  padding: 0.5em 2em;
+}
+
+#error_close {
+  font-size: 200%;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+#error_close a {
+  color: $red;
+  text-decoration: none;
+}

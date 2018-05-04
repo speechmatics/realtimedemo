@@ -1,0 +1,18 @@
+@import '../assets/fonts/gibson/stylesheet';
+$font-family: 'Gibson';
+@import '~angular-material/angular-material';
+
+$background-color: #eee;
+
+html,
+body {
+  background-color: $background-color;
+}
+
+.text-center {
+  text-align: center;
+}
+
+footer {
+  margin-top: 1rem;
+}

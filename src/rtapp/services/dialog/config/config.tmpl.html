@@ -1,0 +1,41 @@
+<md-dialog aria-label="Configuration Editor"
+  class="dialog-config">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Configuration Editor</h2>
+      </div>
+    </md-toolbar>
+    <md-dialog-content layout-padding>
+      <form name="configForm">
+        <div ng-repeat="(group, fieldset) in fieldsets">
+          <div ng-repeat="(key, field) in fieldset"
+            ng-switch="field.type">
+            <div ng-switch-when="checkbox">
+              <md-checkbox ng-model="config[group][key]"
+                aria-label="field.label">
+                {{field.label}}
+              </md-checkbox>
+            </div>
+            <div ng-switch-default>
+              <md-input-container layout-fill>
+                <label ng-bind="field.label"></label>
+                <input ng-model="config[group][key]"
+                  type="{{field.type}}">
+              </md-input-container>
+            </div>
+          </div>
+        </div>
+      </form>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button ng-click="save()"
+        md-autofocus>
+        Save
+      </md-button>
+      <md-button ng-click="cancel()">
+        Cancel
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

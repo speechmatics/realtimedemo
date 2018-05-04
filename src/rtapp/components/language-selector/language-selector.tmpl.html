@@ -1,0 +1,20 @@
+<md-select ng-disabled="$ctrl.disabled"
+  ng-model="$ctrl.selected"
+  ng-change="$ctrl.onLanguageChanged($event)"
+  placeholder="Language"
+  class="language-selector"
+  md-container-class="language-selector"
+  analytics-on="click"
+  analytics-event="Language Selector Clicked">
+  <md-option ng-repeat="language in $ctrl.languages"
+    ng-value="language.code">
+    <div class="language-display"
+      layout="row"
+      layout-align="center center">
+      <div class="language-icon"
+        ng-bind-html="language.icon"></div>
+      <span class="language-name"
+        ng-bind="language.name"></span>
+    </div>
+  </md-option>
+</md-select>

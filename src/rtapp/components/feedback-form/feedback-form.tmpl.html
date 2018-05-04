@@ -1,0 +1,75 @@
+<div class="feedback-form-component"
+    layout="column"
+    layout-padding>
+    <div layout="column"
+        md-whiteframe="1"
+        layout-margin
+        layout-align="center center">
+        <label ng-bind="$ctrl.strings.rating.label"></label>
+        <div layout="column"
+            layout-gt-sm="row">
+            <span layout-margin>
+                <strong ng-bind="$ctrl.strings.rating.leftLabel"></strong>
+            </span>
+            <md-radio-group ng-model="$ctrl.ngModel.rating"
+                ng-disabled="$ctrl.ngDisabled"
+                ng-disabled="$ctrl.ngDisabled"
+                layout="column"
+                layout-gt-sm="row"
+                required>
+                <md-radio-button ng-repeat="value in $ctrl.strings.rating.range"
+                    value="{{value}}"
+                    layout="row"
+                    layout-align="center center"> {{value}}</md-radio-button>
+            </md-radio-group>
+            <span layout-margin>
+                <strong ng-bind="$ctrl.strings.rating.rightLabel"></strong>
+            </span>
+        </div>
+    </div>
+    <div layout="column"
+        md-whiteframe="1"
+        layout-margin
+        layout-align="center center">
+        <label ng-bind="$ctrl.strings.explanation.label"></label>
+        <md-input-container layout-fill>
+            <textarea aria-label="Rating justification"
+                ng-model="$ctrl.ngModel.feedback"
+                ng-disabled="$ctrl.ngDisabled"
+                rows="5"
+                md-select-on-focus
+                required></textarea>
+        </md-input-container>
+    </div>
+    <div layout="column"
+        layout-align="center"
+        md-whiteframe="1"
+        layout-margin>
+        <div ng-bind-html="$ctrl.strings.contactDetails.caption"></div>
+        <div layout="row">
+            <md-input-container layout-fill>
+                <label ng-bind="$ctrl.strings.contactDetails.firstname"></label>
+                <input ng-model="$ctrl.ngModel.firstName"
+                    ng-disabled="$ctrl.ngDisabled"
+                    type="text"
+                    md-select-on-focus>
+            </md-input-container>
+            <md-input-container layout-fill>
+                <label ng-bind="$ctrl.strings.contactDetails.lastname"></label>
+                <input ng-model="$ctrl.ngModel.lastName"
+                    ng-disabled="$ctrl.ngDisabled"
+                    type="text"
+                    md-select-on-focus>
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-input-container layout-fill>
+                <label ng-bind="$ctrl.strings.contactDetails.email"></label>
+                <input ng-model="$ctrl.ngModel.email"
+                    ng-disabled="$ctrl.ngDisabled"
+                    type="email"
+                    md-select-on-focus>
+            </md-input-container>
+        </div>
+    </div>
+</div>

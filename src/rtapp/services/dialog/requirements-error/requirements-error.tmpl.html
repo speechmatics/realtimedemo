@@ -1,0 +1,47 @@
+<md-dialog aria-label="Minimum Requirements"
+  class="dialog-requirements-error">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Minimum Requirements</h2>
+    </div>
+  </md-toolbar>
+  <md-dialog-content layout-padding
+    layout="column"
+    layout-align="center flex-start">
+    <h5 class="md-title text-center">
+      Sorry but it appears your browser does not meet the minimum requirements for this demo.
+      <br>
+    </h5>
+    <h6 class="md-subhead text-center">
+      Please try upgrading or switching to another browser.
+    </h6>
+    <div layout="row"
+      layout-align="center"
+      layout-padding>
+      <table>
+        <tr>
+          <th align="right">
+          </th>
+          <th align="center"
+            class="md-subhead">
+            Supported
+          </th>
+        </tr>
+        <tr ng-repeat="(key, value) in features">
+          <td ng-bind="value.name"
+            align="right"></td>
+          <td align="center">
+            <md-icon ng-if="value.supported"
+              md-svg-src="${require('file-loader!./../../../../assets/icons/ic_check_48px.svg')}"
+              md-colors="::{color:'green'}"
+              aria-label="check"></md-icon>
+            <md-icon ng-if="!value.supported"
+              md-svg-src="${require('file-loader!./../../../../assets/icons/ic_close_48px.svg')}"
+              md-colors="::{color:'red'}"
+              aria-label="cross"></md-icon>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </md-dialog-content>
+</md-dialog>
