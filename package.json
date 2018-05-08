@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git@github.com:speechmatics/realtimedemo.git"
   },
+  "license": "MIT",
   "author": "Speechmatics <support@speechmatics.com>",
   "private": true,
   "devDependencies": {
