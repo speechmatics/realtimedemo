@@ -2,10 +2,6 @@
 
 A demo web application for showcasing our real-time transcription service.
 
-This demo is publically hosted here.
-
-- https://rt.speechmatics.io/
-
 ## Requirements
 
 - [Docker CE][docker-ce] >= Version 17
