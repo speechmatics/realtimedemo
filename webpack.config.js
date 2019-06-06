@@ -1,5 +1,5 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ExtractTextPlugin = require('mini-css-extract-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -10,6 +10,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 8080
 const title = 'Real-time transcription demo'
+
 
 module.exports = {
   context: path.join(__dirname, 'src'),
@@ -29,11 +30,14 @@ module.exports = {
   module: {
     rules: [{
       test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: ['css-loader', 'sass-loader']
-      })
-    }, {
+      use: [ {
+          loader: ExtractTextPlugin.loader,
+      },
+        'css-loader',
+        'sass-loader'
+    ]
+      }
+  , {
       // Applies to all imported '.html' files.
       test: /\.html$/,
       use: [
@@ -50,12 +54,10 @@ module.exports = {
       exclude: /node_modules/,
       use: [
         {
-          loader: 'ng-annotate-loader' // Adds AngularJS dependency injection annotations.
-        },
-        {
           loader: 'babel-loader', // Compiles ES2015 to backwards compatible JavaScript.
           options: {
-            presets: ['es2015']
+            presets: ['@babel/preset-env'],
+            plugins: [['angularjs-annotate', {"explicitOnly": true}]]
           }
         }
       ]
@@ -70,8 +72,7 @@ module.exports = {
       use: {
         loader: 'modernizr-loader'
       }
-    },
-    {
+    },{
       test: /\.modernizrrc(\.json)?$/,
       use: [{
         loader: 'modernizr-loader'

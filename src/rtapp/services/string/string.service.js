@@ -1,4 +1,4 @@
-import Strings from 'json-loader!../../strings.json'
+import Strings from '../../strings.json'
 
 export default class StringService {
   /* @ngInject */
