@@ -25,6 +25,7 @@ export default class AudioCaptureService {
   startCapture (listen = false) {
     return new Promise((resolve, reject) => {
       function handleMediaStream (mediaStream) {
+        this.audioContext.resume()
         this.mediaStream = mediaStream
         this.mediaStreamSource = this.audioContext.createMediaStreamSource(
           this.mediaStream
