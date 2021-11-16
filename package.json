@@ -16,7 +16,7 @@
   "author": "Speechmatics <support@speechmatics.com>",
   "private": true,
   "devDependencies": {
-    "aws-sdk": "^2.467.0",
+    "aws-sdk": "^2.814.0",
     "@babel/core": "^7.4.5",
     "babel-loader": "^8.0.6",
     "@babel/preset-env": "^7.4.5",
