@@ -37,7 +37,7 @@
     "mime-types": "^2.1.24",
     "modernizr-loader": "^1.0.1",
     "babel-plugin-angularjs-annotate": "^0.10.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.19.1",
     "raw-loader": "^2.0.0",
     "request": "^2.88.0",
