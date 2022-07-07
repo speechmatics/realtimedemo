@@ -64,6 +64,6 @@
     "angulartics-google-analytics": "^0.4.0",
     "emojione": "^3.0.3",
     "modernizr": "^3.5.0",
-    "moment": "^2.18.1"
+    "moment": "^2.29.4"
   }
 }
