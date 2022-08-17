@@ -2,5 +2,6 @@ FROM node:8
 WORKDIR /usr/src/realtimewebclient
 COPY package.json .
 COPY yarn.lock .
+RUN git config --global url.https://.insteadOf git://
 RUN yarn install && yarn cache clean
 CMD npm run dev
